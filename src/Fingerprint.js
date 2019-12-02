@@ -30,6 +30,7 @@ class Fingerprint extends React.Component
         this.state = {
             time:        moment(),
             fingerprint: undefined,
+            components: [],
         };
     }
 
@@ -54,8 +55,9 @@ class Fingerprint extends React.Component
                 webgl: false,
             };
 
-            Fingerprint2.getV18({excludes}, function (result) {
-                that.setState({fingerprint: result});
+            Fingerprint2.getV18({excludes}, function (result, components) {
+                console.log(JSON.stringify(components));
+                that.setState({fingerprint: result, components: components});
             });
         }, 500);
     }
