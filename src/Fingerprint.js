@@ -53,6 +53,7 @@ class Fingerprint extends React.Component
         {
             let excludes = {
                 webgl: false,
+                enumerateDevices: true,
             };
 
             Fingerprint2.getV18({excludes}, function (result, components) {
